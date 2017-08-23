@@ -1,0 +1,11 @@
+ ul {
+   float: right;
+ }
+
+ .logo {
+   height: 64px;
+ }
+
+ .logo img {
+   height: 100%;
+ }
