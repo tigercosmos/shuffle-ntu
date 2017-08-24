@@ -4,14 +4,14 @@
   </div>
   <div nz-col [nzXs]="12" [nzSm]="16">
     <ul nz-menu [nzMode]="'horizontal'" class="ant-menu ant-menu-root  ant-menu-horizontal">
-      <li nz-menu-item class="ant-menu-item ant-menu-item-selected">
-        理念</li>
-      <li nz-menu-item class="ant-menu-item">
-        里程碑</li>
-      <li nz-menu-item class="ant-menu-item">
-        聽他們說</li>
-      <li nz-menu-item class="ant-menu-item">
-        體驗故事</li>
+      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('concept')">
+        理念</a>
+      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('milestone')">
+        里程碑</a>
+      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('story')">
+        聽他們說</a>
+      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('signup')">
+        體驗故事</a>
     </ul>
   </div>
 </div>

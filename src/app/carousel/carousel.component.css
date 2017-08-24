@@ -1,6 +1,7 @@
 :host ::ng-deep .ant-carousel .slick-slide {
   text-align: center;
-  height: 160px;
+  height: calc(100vh - 64px);
+  width: 100wh;
   line-height: 160px;
   background: #364d79;
   color: #fff;

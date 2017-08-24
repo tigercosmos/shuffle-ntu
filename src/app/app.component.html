@@ -1,16 +1,16 @@
 <nz-layout class="layout ant-layout">
 
   <nz-header>
-    <app-navbar></app-navbar>
+    <app-navbar (getTarget)="scrollToTarget($event)"></app-navbar>
   </nz-header>
 
   <nz-content class="ant-layout-content">
 
-    <app-carousel></app-carousel>
-    <app-concept></app-concept>
-    <app-milestone></app-milestone>
-    <app-story></app-story>
-    <app-signup></app-signup>
+    <app-carousel class="sectopn" id="carousel"></app-carousel>
+    <app-concept class="sectopn" id="concept"></app-concept>
+    <app-milestone class="sectopn" id="milestone"></app-milestone>
+    <app-story class="sectopn" id="story"></app-story>
+    <app-signup class="sectopn" id="signup"></app-signup>
 
   </nz-content>
   <nz-footer style="text-align: center;" class="ant-layout-footer">

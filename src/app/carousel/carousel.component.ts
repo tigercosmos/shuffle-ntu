@@ -15,4 +15,5 @@ export class CarouselComponent implements OnInit {
       this.array = [1, 2, 3, 4];
     }, 500);
   }
+  
 }
