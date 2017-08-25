@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.contentSection {
+  min-height: 500px;
+}
+
+.contentTitle {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: xx-large;
+  padding: 40px 0px;
+}
+
+* {
+  font-family: "Microsoft JhengHei", sans-serif;
+}

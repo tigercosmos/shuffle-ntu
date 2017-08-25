@@ -11,6 +11,7 @@ import { ConceptComponent } from './concept/concept.component';
 import { MilestoneComponent } from './milestone/milestone.component';
 import { StoryComponent } from './story/story.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot()
   ],
