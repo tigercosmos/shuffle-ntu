@@ -61,7 +61,7 @@ export class SignupComponent implements OnInit {
       name: ['', [Validators.required]],
       email: ['', [this.emailValidator]],
       grade: ['', [Validators.required]],
-      ntu: ['', [Validators.required]]
+      ntu: [true, [Validators.required]]
     });
   }
 
