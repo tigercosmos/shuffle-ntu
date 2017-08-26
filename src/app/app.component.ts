@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   scrollToTarget(target: String) {
     $('html, body').animate({
-      scrollTop: $('#' + target).offset().top
+      scrollTop: $('#' + target).offset().top + (-64)
     }, 900);
   }
 
