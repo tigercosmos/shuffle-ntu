@@ -1,17 +1,20 @@
-<div nz-row [nzAlign]="middle">
-  <div nz-col [nzXs]="12" [nzSm]="8" class="logo">
-    <img src="assets/img/logo.png">
-  </div>
-  <div nz-col [nzXs]="12" [nzSm]="16">
-    <ul nz-menu [nzMode]="'horizontal'" class="ant-menu ant-menu-root  ant-menu-horizontal">
-      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('concept')">
-        理念</a>
-      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('milestone')">
-        里程碑</a>
-      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('story')">
-        聽他們說</a>
-      <a nz-menu-item class="ant-menu-item" (click)="emitTarget('signup')">
-        體驗故事</a>
-    </ul>
+<div class="alwaysTop">
+  <div nz-row [nzAlign]="middle">
+    <div nz-col [nzXs]="12" [nzSm]="8" class="logo">
+      <img src="assets/img/logo.png">
+    </div>
+    <div nz-col [nzXs]="12" [nzSm]="16" id="topnav">
+      <ul nz-menu [nzMode]="'horizontal'">
+        <li nz-menu-item (click)="emitTarget('concept')">
+          理念</li>
+        <li nz-menu-item (click)="emitTarget('milestone')">
+          里程碑</li>
+        <li nz-menu-item (click)="emitTarget('story')">
+          聽他們說</li>
+        <li nz-menu-item (click)="emitTarget('signup')">
+          體驗故事</li>
+        <li nz-menu-item class="icon" (click)="rwd()">&#9776;</li>
+      </ul>
+    </div>
   </div>
 </div>

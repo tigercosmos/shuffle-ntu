@@ -16,6 +16,15 @@ export class NavbarComponent implements OnInit {
     this.getTarget.emit(target);
   }
 
+  rwd() {
+    const x = $('#topnav');
+    if (!x.hasClass('responsive')) {
+      x.addClass('responsive');
+    } else {
+      x.removeClass('responsive');
+    }
+  }
+
   ngOnInit() {
   }
 

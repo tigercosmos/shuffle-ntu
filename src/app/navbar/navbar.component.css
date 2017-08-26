@@ -1,5 +1,7 @@
  ul {
-   float: right;
+   padding: 16px 0px 0px 0px;
+   float: right; 
+   display: block;
  }
 
  .logo {
@@ -9,3 +11,46 @@
  .logo img {
    height: 100%;
  }
+
+ .alwaysTop {
+   left:0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 999;
+   height: 64px;
+   background-color: white;
+ }
+
+
+#topnav .icon {
+  display: none;
+  font-size:15px;
+}
+
+@media screen and (max-width: 800px) {
+  #topnav li {display: none;}
+  #topnav li.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #topnav.responsive {position: relative;}
+  #topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 16px;
+  }
+  #topnav.responsive li:not(:last-child) {
+    top: 48px;
+    right: 0;
+    float: none;
+    width: 100wh;
+    display: block;
+    text-align: center;
+    background-color: white;
+  }
+
+}
