@@ -1,6 +1,6 @@
 {
     "hosting": {
-      "dist": "app",
+      "public": "/disk/",
       "ignore": [
       ]
     }
