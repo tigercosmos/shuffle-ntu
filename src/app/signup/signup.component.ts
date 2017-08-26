@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +11,10 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class SignupComponent implements OnInit {
+
+  users: FirebaseListObservable<any[]>;
   validateForm: FormGroup;
+
   submitForm = ($event, value) => {
     $event.preventDefault();
     for (const key in this.validateForm.controls) {
@@ -17,7 +22,19 @@ export class SignupComponent implements OnInit {
         this.validateForm.controls[key].markAsDirty();
       }
     }
-    console.log(value);
+    // put the singup info to database
+    try {
+      this.users.push(value);
+      this.nns.create('success',
+        '成功報名',
+        '每個禮拜六，我們將從報名者中抽出幸運兒，體驗最好玩的台大晚餐'
+      );
+    } catch (e) {
+      this.nns.create('error',
+        '報名失敗',
+        '請重新提交一次'
+      );
+    }
   }
 
   getFormControl(name) {
@@ -33,11 +50,17 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private db: AngularFireDatabase,
+    private nns: NzNotificationService
+  ) {
+    this.users = db.list('/users');
+
     this.validateForm = this.fb.group({
-      userName: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       email: ['', [this.emailValidator]],
-      comment: ['', [Validators.required]],
+      grade: ['', [Validators.required]],
       ntu: ['', [Validators.required]]
     });
   }
