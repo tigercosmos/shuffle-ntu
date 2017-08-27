@@ -1,20 +1,19 @@
-<nz-layout class="layout ant-layout">
+<nz-layout>
 
   <nz-header>
     <app-navbar (getTarget)="scrollToTarget($event)"></app-navbar>
   </nz-header>
 
-  <nz-content class="ant-layout-content">
-
+  <nz-content>
     <app-carousel id="carousel"></app-carousel>
     <app-concept id="concept"></app-concept>
     <app-milestone id="milestone"></app-milestone>
     <app-story id="story"></app-story>
     <app-signup id="signup"></app-signup>
-
   </nz-content>
-  <nz-footer style="text-align: center;" class="ant-layout-footer">
-    ©2017 <a href="http://tigercosmos.github.io">Liu, An chi 劉安齊</a>
+
+  <nz-footer>
+    <app-footer></app-footer>
   </nz-footer>
 
 </nz-layout>

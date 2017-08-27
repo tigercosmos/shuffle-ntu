@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { environment } from '../environments/environment';
     ConceptComponent,
     MilestoneComponent,
     StoryComponent,
-    SignupComponent
+    SignupComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
