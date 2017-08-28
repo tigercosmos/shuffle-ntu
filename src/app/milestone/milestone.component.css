@@ -1,3 +1,15 @@
 div {
-  background-color: forestgreen;
+  background-color: #BCF4BC;
+}
+
+.ant-row-flex {
+  height: 500px;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 30px;
 }

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MilestoneComponent implements OnInit {
 
+  signupTotal: number;
+  comeTotal: number;
+  meetTotal: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.signupTotal = 120;
+    this.comeTotal = 60;
+    this.meetTotal = 23;
   }
 
 }
