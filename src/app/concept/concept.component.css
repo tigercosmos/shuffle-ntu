@@ -1,3 +1,28 @@
 div {
-  background-color: #F47912;
+  background-color: #FFE3CC;
+}
+
+.ant-row .ant-col-16 {
+  min-height: 500px;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  height: 420px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  font-size: large;
+  text-align: left;
 }
