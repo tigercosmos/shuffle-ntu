@@ -1,1 +1,13 @@
-<div class="contentSection"></div>
+<div class="contentSection">
+  <div nz-row [nzType]="'flex'" [nzJustify]="'space-around'" [nzAlign]="'middle'">
+    <div nz-col [nzXs]="24" [nzSm]="12" align="center">
+      <div class="content">
+        <p>{{story.content }}</p>
+      </div>
+      <img [src]=story.src>
+      <div class="info">
+        <p>{{story.grade}} {{story.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

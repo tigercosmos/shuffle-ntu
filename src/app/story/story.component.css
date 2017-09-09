@@ -1,3 +1,18 @@
 div {
-  background-color: whitesmoke;
+  background-color: #F9F4C0;
+}
+
+img {
+  border-radius: 50%;
+  height: 150px;
+}
+
+.content {
+  padding: 100px 0px 50px 0px;
+  font-size: large;
+}
+
+.info {
+  padding: 30px;
+  font-size: large;
 }
