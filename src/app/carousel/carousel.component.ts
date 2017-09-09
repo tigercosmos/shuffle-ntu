@@ -11,9 +11,6 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(_ => {
-      this.array = [1, 2, 3, 4];
-    }, 500);
   }
-  
+
 }
