@@ -1,15 +1,20 @@
-:host ::ng-deep .ant-carousel .slick-slide {
-  text-align: center;
+.img {
   height: calc(100vh - 64px);
-  width: 100wh;
-  line-height: 160px;
-  background: #364d79;
-  color: #fff;
-  overflow: hidden;
+  width: 100%;
+  background-image: url("/assets/img/shufflentubanner.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-img {
-  height: calc(100vh - 64px);
-  width:100%;
-  margin: auto;
+@media only screen and (max-width: 800px) {
+  .img {
+    background-image: url("/assets/img/shufflentubanner-md.jpg");
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .img {
+    background-image: url("/assets/img/shufflentubanner-xs.jpg");
+  }
 }
