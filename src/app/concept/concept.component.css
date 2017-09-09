@@ -3,14 +3,30 @@ div {
 }
 
 .center {
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-img {
-  height: 420px;
+.img {
+  background-image: url("/assets/img/concept2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 350px;
+}
+
+@media screen and (max-width: 1000px) {
+  .img {
+    height: 270px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .img {
+    height: 200px;
+  }
 }
 
 .content {
