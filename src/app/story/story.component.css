@@ -1,5 +1,5 @@
-div {
-  background-color: #F9F4C0;
+.contentBlock {
+  background-color: white;
 }
 
 img {
@@ -8,7 +8,7 @@ img {
 }
 
 .content {
-  padding: 100px 0px 50px 0px;
+  padding: 30px 0px 30px 0px;
   font-size: large;
 }
 

@@ -1,9 +1,9 @@
-div {
-  background-color: #BCF4BC;
+.contentBlock {
+  background-color: #ecdaa7;
 }
 
 .ant-row-flex {
-  height: 500px;
+  height: calc((100vh - 64px)*0.8);
 }
 
 h1 {

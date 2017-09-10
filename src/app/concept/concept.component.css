@@ -1,9 +1,9 @@
-div {
-  background-color: #FFE3CC;
+.contentBlock {
+  background-color: white;
 }
 
 .center {
-  min-height: 500px;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

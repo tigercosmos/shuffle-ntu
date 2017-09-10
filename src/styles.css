@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 .contentSection {
-  min-height: 500px;
+  height: calc(100vh - 64px);
+  background-color: white;
+}
+
+.contentPadding {
+  height: calc(100vh - 64px);
+  padding: 5% 10%;
 }
 
 .contentTitle {
@@ -14,4 +20,5 @@
 
 * {
   font-family: "Microsoft JhengHei", sans-serif;
+  color: #60202d !important;
 }
