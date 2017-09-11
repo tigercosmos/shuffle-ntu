@@ -1,0 +1,16 @@
+<button nz-button (click)="showModal()" class="circle">
+  <p>{{title}}</p>
+</button>
+<nz-modal [nzVisible]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter" (nzOnCancel)="handleCancel($event)">
+  <ng-template #modalTitle>
+    {{title}}
+  </ng-template>
+  <ng-template #modalContent>
+    <p>尚未開始喔 >.O </p>
+  </ng-template>
+  <ng-template #modalFooter>
+    <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel($event)">
+      返 回
+    </button>
+  </ng-template>
+</nz-modal>

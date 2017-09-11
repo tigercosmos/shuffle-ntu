@@ -7,19 +7,6 @@
   background-position: center center;
 }
 
-button {
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  background-color: #ecdaa7;
-  border-color: #60202d;
-  border-width: 3px;
-  z-index: 2;
-  font-size: large;
-}
-
 @media only screen and (max-width: 800px) {
   .img {
     background-image: url("/assets/img/shufflentubanner-md.jpg");
@@ -29,11 +16,5 @@ button {
 @media only screen and (max-width: 400px) {
   .img {
     background-image: url("/assets/img/shufflentubanner-xs.jpg");
-  }
-  button {
-    height: 80px;
-    bottom: 20px;
-    right: 20px;
-    font-size: small;
   }
 }
