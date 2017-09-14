@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-concept',
@@ -7,20 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConceptComponent implements OnInit {
 
-  content: string;
+  contentDB: FirebaseObjectObservable<any>;
+  contentString: String = 'Loading...';
+  mobile: Boolean = false;
+  sourcePath: any = '/contents/concept';
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) {
+    // Change content to mobile version
+    if ($(window).width() < 500) {
+      this.mobile = true;
+      this.sourcePath += '_m';
+    }
+    // get content from firebase
+    this.contentDB = db.object(this.sourcePath);
+    this.contentDB.subscribe(item => {
+      this.contentString = item.$value;
+    });
+  }
 
   ngOnInit() {
-    this.content = `
-    台大晚餐，總是充滿故事
-    這裡就像一個新的時空，你會感到完全放鬆
-    跟陌生朋友真誠對話，深入互道人生故事
-    每一位，都樂於分享、細心聆聽
-
-    這不是聯誼，這是台大晚餐
-    讓你沈浸一夜故事饗宴
-    `;
   }
 
 }

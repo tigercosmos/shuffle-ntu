@@ -5,7 +5,7 @@
         <div nz-col [nzXs]="24" [nzSm]="8" class="img">
         </div>
         <div nz-col [nzXs]="24" [nzSm]="12" [nzOffset]="4" class="content">
-          <p *ngFor="let line of content.split('\n')">
+          <p *ngFor="let line of contentString.split(' ')">
             {{line}}
           </p>
         </div>
