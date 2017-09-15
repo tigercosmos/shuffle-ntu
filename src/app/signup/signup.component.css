@@ -1,4 +1,4 @@
 .contentBlock {
   background-color: #ecdaa7;
-  height: 100%;
+  min-height: 100%;
 }
