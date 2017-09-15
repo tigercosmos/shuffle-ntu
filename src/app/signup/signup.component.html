@@ -9,7 +9,7 @@
           <div nz-form-label nz-col [nzXs]="7" [nzSm]="7">
             <label nz-form-item-required>姓名</label>
           </div>
-          <div nz-col [nzXs]="12" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('name')">
+          <div nz-col [nzXs]="16" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('name')">
             <nz-input formControlName="name" [nzType]="'text'" [nzPlaceHolder]="'告訴我們您的名字'" [nzSize]="'large'">
             </nz-input>
           </div>
@@ -18,7 +18,7 @@
           <div nz-form-label nz-col [nzXs]="7" [nzSm]="7">
             <label nz-form-item-required>E-mail</label>
           </div>
-          <div nz-col [nzXs]="12" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('email')">
+          <div nz-col [nzXs]="16" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('email')">
             <nz-input formControlName="email" [nzPlaceHolder]="'能夠聯絡您的 email'" [nzType]="'email'" [nzSize]="'large'">
             </nz-input>
             <div nz-form-explain *ngIf="getFormControl('email').dirty&&getFormControl('email').hasError('email')">The input is not valid E-mail!</div>
@@ -29,7 +29,7 @@
           <div nz-col [nzXs]="7" [nzSm]="7" nz-form-label>
             <label nz-form-item-required>系級</label>
           </div>
-          <div nz-col [nzXs]="12" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('grade')">
+          <div nz-col [nzXs]="16" [nzSm]="8" nz-form-control [nzValidateStatus]="getFormControl('grade')">
             <nz-input formControlName="grade" [nzRows]="2" [nzType]="'textarea'" [nzPlaceHolder]="'i.g. 生機三、東吳法律四'" [nzSize]="'large'">
             </nz-input>
             <div nz-form-explain *ngIf="getFormControl('grade').dirty&&getFormControl('grade').hasError('required')">我們想知道！</div>
@@ -39,12 +39,12 @@
           <div nz-form-label nz-col [nzXs]="7" [nzSm]="7">
             <label nz-form-item-required>台大學生</label>
           </div>
-          <div nz-form-control nz-col [nzXs]="12" [nzSm]="8">
+          <div nz-form-control nz-col [nzXs]="16" [nzSm]="8">
             <nz-switch formControlName="ntu"></nz-switch>
           </div>
         </div>
         <div nz-form-item nz-row>
-          <div nz-col [nzOffset]="7" [nzXs]="12" [nzSm]="8" nz-form-control>
+          <div nz-col [nzOffset]="7" [nzXs]="16" [nzSm]="8" nz-form-control>
             <button nz-button [nzType]="'primary'" [nzSize]="'large'" [disabled]="!validateForm.valid">報名參加</button>
           </div>
         </div>
