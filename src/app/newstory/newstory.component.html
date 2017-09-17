@@ -1,0 +1,58 @@
+<a (click)="showModal()">
+  <ng-content></ng-content>
+</a>
+<nz-modal [nzVisible]="isVisible" [nzTitle]="'留下故事'" [nzFooter]="modalFooter" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
+  (nzOnOk)="handleOk($event)" [nzConfirmLoading]="isConfirmLoading">
+  <ng-template #modalContent>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event,validateForm.value)">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzXs]="8">
+          <label nz-form-item-required>姓名</label>
+        </div>
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('name')">
+          <nz-input formControlName="name" [nzType]="'text'" [nzPlaceHolder]="'告訴我們您的名字'" [nzSize]="'large'">
+          </nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzXs]="8">
+          <label nz-form-item-required>E-mail</label>
+        </div>
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('email')">
+          <nz-input formControlName="email" [nzPlaceHolder]="'能夠聯絡您的 email'" [nzType]="'email'" [nzSize]="'large'">
+          </nz-input>
+          <div nz-form-explain *ngIf="getFormControl('email').dirty&&getFormControl('email').hasError('email')">The input is not valid E-mail!</div>
+          <div nz-form-explain *ngIf="getFormControl('email').dirty&&getFormControl('email').hasError('required')">Please input your E-mail!</div>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-col [nzXs]="8" nz-form-label>
+          <label nz-form-item-required>系級</label>
+        </div>
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('grade')">
+          <nz-input formControlName="grade" [nzRows]="2" [nzType]="'textarea'" [nzPlaceHolder]="'i.g. 生機三、東吳法律四'" [nzSize]="'large'">
+          </nz-input>
+          <div nz-form-explain *ngIf="getFormControl('grade').dirty&&getFormControl('grade').hasError('required')">我們想知道！</div>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-col [nzXs]="8" nz-form-label>
+          <label nz-form-item-required>心得</label>
+        </div>
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('feedback')">
+          <nz-input formControlName="feedback" [nzRows]="4" [nzType]="'textarea'" [nzPlaceHolder]="'活動完有甚麼心得呢？'" [nzSize]="'large'">
+          </nz-input>
+          <div nz-form-explain *ngIf="getFormControl('feedback').dirty&&getFormControl('feedback').hasError('required')">我們想知道！</div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+  <ng-template #modalFooter>
+    <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel($event)">
+      返 回
+    </button>
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" [disabled]="!validateForm.valid">
+      留下故事
+    </button>
+  </ng-template>
+</nz-modal>

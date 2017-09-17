@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
 import { AdmissionComponent } from './admission/admission.component';
+import { NewstoryComponent } from './newstory/newstory.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdmissionComponent } from './admission/admission.component';
     StoryComponent,
     SignupComponent,
     FooterComponent,
-    AdmissionComponent
+    AdmissionComponent,
+    NewstoryComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { AdmissionComponent } from './admission/admission.component';
         nzTop: '70%',
       }
     },
+    NewstoryComponent
   ],
   bootstrap: [AppComponent]
 })
