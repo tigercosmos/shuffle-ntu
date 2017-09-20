@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { NewstoryComponent } from './newstory/newstory.component';
+import { ProcessComponent } from './process/process.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NewstoryComponent } from './newstory/newstory.component';
     SignupComponent,
     FooterComponent,
     AdmissionComponent,
-    NewstoryComponent
+    NewstoryComponent,
+    ProcessComponent
   ],
   imports: [
     BrowserModule,
