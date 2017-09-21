@@ -37,12 +37,22 @@
       </div>
       <div nz-form-item nz-row>
         <div nz-col [nzXs]="8" nz-form-label>
+          <label nz-form-item-required>照片連結</label>
+        </div>
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('src')">
+          <nz-input formControlName="src" [nzRows]="2" [nzType]="'textarea'" [nzPlaceHolder]="'link, i.g. https://i.imgur.com/your_photo.jpg'" [nzSize]="'large'">
+          </nz-input>
+          <div nz-form-explain *ngIf="getFormControl('src').dirty&&getFormControl('src').hasError('required')">我們想知道！</div>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-col [nzXs]="8" nz-form-label>
           <label nz-form-item-required>心得</label>
         </div>
-        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('feedback')">
-          <nz-input formControlName="feedback" [nzRows]="4" [nzType]="'textarea'" [nzPlaceHolder]="'活動完有甚麼心得呢？'" [nzSize]="'large'">
+        <div nz-col [nzXs]="12" nz-form-control [nzValidateStatus]="getFormControl('content')">
+          <nz-input formControlName="content" [nzRows]="4" [nzType]="'textarea'" [nzPlaceHolder]="'活動完有甚麼心得呢？'" [nzSize]="'large'">
           </nz-input>
-          <div nz-form-explain *ngIf="getFormControl('feedback').dirty&&getFormControl('feedback').hasError('required')">我們想知道！</div>
+          <div nz-form-explain *ngIf="getFormControl('content').dirty&&getFormControl('content').hasError('required')">我們想知道！</div>
         </div>
       </div>
     </form>
@@ -51,7 +61,7 @@
     <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel($event)">
       返 回
     </button>
-    <button nz-button [nzType]="'primary'" [nzSize]="'large'" [disabled]="!validateForm.valid">
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="submitForm($event, validateForm.value)" [disabled]="!validateForm.valid">
       留下故事
     </button>
   </ng-template>

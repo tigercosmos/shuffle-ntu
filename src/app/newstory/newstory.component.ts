@@ -22,14 +22,6 @@ export class NewstoryComponent implements OnInit {
     this.isVisible = true;
   }
 
-  handleOk = (e) => {
-    this.isConfirmLoading = true;
-    setTimeout(() => {
-      this.isVisible = false;
-      this.isConfirmLoading = false;
-    }, 3000);
-  }
-
   handleCancel = (e) => {
     this.isVisible = false;
   }
@@ -51,6 +43,10 @@ export class NewstoryComponent implements OnInit {
         '成功',
         '您的故事將會隨機出現在網站中'
       );
+
+      // hide modal
+      this.isVisible = false;
+
     } catch (e) {
       this.nns.create('error',
         '失敗',
@@ -83,10 +79,10 @@ export class NewstoryComponent implements OnInit {
       name: ['', [Validators.required]],
       email: ['', [this.emailValidator]],
       grade: ['', [Validators.required]],
-      feedback: ['', [Validators.required]],
+      src: ['', [Validators.required]],
+      content: ['', [Validators.required]],
     });
   }
-
 
   ngOnInit() {
   }
