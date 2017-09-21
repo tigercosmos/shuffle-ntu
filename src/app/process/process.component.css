@@ -2,3 +2,15 @@
   background-color: #ecdaa7;
   min-height: 100%;
 }
+
+.progress img {
+  height: 200px;
+}
+
+.arrow img {
+  height: 50px;
+}
+
+p {
+  font-size: 20px;
+}
