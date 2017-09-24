@@ -4,7 +4,7 @@
 }
 
 .ant-row-flex {
-  height: calc((100vh - 64px)*0.8);
+  min-height: calc((100vh - 64px)*0.8 - 128px);
 }
 
 h1 {

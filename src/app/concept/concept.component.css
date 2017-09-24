@@ -10,6 +10,11 @@
   justify-content: center;
 }
 
+.content {
+  font-size: large;
+  text-align: left;
+}
+
 .img {
   background-image: url("/assets/img/concept2.jpg");
   background-size: contain;
@@ -24,13 +29,12 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .img {
     height: 200px;
   }
-}
-
-.content {
-  font-size: large;
-  text-align: left;
+  .content {
+    padding-top: 30px;
+    padding-right: 30px;
+  }
 }
