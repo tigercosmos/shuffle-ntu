@@ -4,13 +4,47 @@
 }
 
 .progress img {
-  height: 200px;
+  height: 150px;
 }
 
 .arrow img {
-  height: 50px;
+  height: 30px;
 }
 
 p {
   font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .progress img {
+    height: 120px;
+  }
+  .arrow img {
+    height: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .progress{
+    padding: 10px;
+  }
+  .progress img {
+    height: 100px;
+    
+  }
+  .arrow img {
+    height: 30px;
+    transform: rotate(90deg);
+  }
+  .contentTitle {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+  p {
+    font-size: 15px;
+  }
 }
