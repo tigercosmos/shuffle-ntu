@@ -1,7 +1,6 @@
 {
-    "hosting": {
-      "public": "dist",
-      "ignore": [
-      ]
-    }
+  "hosting": {
+    "public": "dist",
+    "ignore": []
   }
+}
