@@ -24,10 +24,11 @@
     "angularfire2": "^4.0.0-rc.2",
     "core-js": "^2.4.1",
     "firebase": "^4.3.0",
+    "firebase-admin": "^5.2.1",
     "firebase-functions": "^0.6.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "ng-zorro-antd": "^0.5.0",
+    "ng-zorro-antd": "^0.5.2",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
