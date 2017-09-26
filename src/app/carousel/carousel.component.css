@@ -13,6 +13,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .img {
+    background-image: url("/assets/img/shufflentubanner-sm.jpg");
+  }
+}
+
 @media only screen and (max-width: 430px) {
   .img {
     background-image: url("/assets/img/shufflentubanner-xs.jpg");
