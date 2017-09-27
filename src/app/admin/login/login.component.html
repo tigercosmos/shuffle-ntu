@@ -1,0 +1,58 @@
+<div class="container">
+  <div nz-row [nzType]="'flex'" [nzJustify]="'space-around'" [nzAlign]="'middle'" align="center">
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #body>
+
+          <div class="logo"></div>
+
+          <div class="title">
+            {{title}}
+          </div>
+
+          <div *ngIf="!validEmail;then CheckEmail else AuthEmail"></div>
+          i-anchi.liu@deltaww.com
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>
+
+<ng-template #CheckEmail>
+  <form nz-form [nzLayout]="'inline'" [formGroup]="emailForm" (ngSubmit)="submitEmail($event,emailForm.value)">
+    <div nz-form-item>
+      <div nz-col nz-form-control [nzValidateStatus]="emailForm.controls.email">
+        <nz-input formControlName="email" [nzPlaceHolder]="'Please login with your email'" [nzType]="'email'" [nzSize]="'large'">
+        </nz-input>
+        <!-- <div nz-form-explain *ngIf="emailForm.controls.email.dirty&&emailForm.controls.email.hasError('email')">The input is not valid E-mail!</div> -->
+        <div nz-form-explain *ngIf="emailForm.controls.email.dirty&&emailForm.controls.email.hasError('required')">Please input your E-mail!</div>
+      </div>
+    </div>
+    <div nz-form-item>
+      <div nz-form-control>
+        <button nz-button [nzType]="'primary'" [nzSize]="'large'"  [disabled]="!emailForm.valid">Enter</button>
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+
+<ng-template #AuthEmail>
+  <div class="email">Welcome, <b>{{email}}</b>!</div>
+  <form nz-form [nzLayout]="'inline'" [formGroup]="pwdForm" (ngSubmit)="submitPwd($event,pwdForm.value)">
+
+    <div nz-form-item>
+      <div nz-col nz-form-control [nzValidateStatus]="pwdForm.controls.password">
+        <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'password'" [nzSize]="'large'">
+        </nz-input>
+        <div nz-form-explain *ngIf="pwdForm.controls.password.dirty&&pwdForm.controls.password.hasError('required')">You need to enter your password.</div>
+      </div>
+    </div>
+    <div nz-form-item>
+      <div nz-form-control>
+        <button nz-button [nzType]="'primary'" [nzSize]="'large'"  [disabled]="!pwdForm.valid">Enter</button>
+      </div>
+    </div>
+  </form>
+</ng-template>

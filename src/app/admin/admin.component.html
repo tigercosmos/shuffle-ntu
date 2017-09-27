@@ -1,3 +1,19 @@
-<p>
-  admin works!
-</p>
+<div *ngIf="!isLogIn">
+<app-login   (checkLogIn)="isLogIn=$event"></app-login> 
+</div>
+<div *ngIf="isLogIn">
+  <div nz-row [nzType]="'flex'" [nzJustify]="'space-around'">
+    <div nz-col [nzSpan]="4">
+      col-4
+    </div>
+    <div nz-col [nzSpan]="4">
+      col-4
+    </div>
+    <div nz-col [nzSpan]="4">
+      col-4
+    </div>
+    <div nz-col [nzSpan]="4">
+      col-4
+    </div>
+  </div>
+</div>

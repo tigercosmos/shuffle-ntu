@@ -11,8 +11,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
-import { HomeComponent, AdminComponent } from './index';
+
 import {
+  HomeComponent,
   CarouselComponent,
   NavbarComponent,
   ConceptComponent,
@@ -24,6 +25,11 @@ import {
   NewstoryComponent,
   ProcessComponent
 } from './home/index';
+
+import {
+  AdminComponent,
+  LoginComponent
+} from './admin/index';
 
 @NgModule({
   declarations: [
@@ -39,13 +45,14 @@ import {
     NewstoryComponent,
     ProcessComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    LoginComponent,
   ],
   imports: [
+    HttpModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
