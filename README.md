@@ -16,11 +16,17 @@ ng serve
 ```
 
 ## Deploy
-Build product
+### Build product step by step
+Build
 ```
 ng build
 ```
 Upload to firebase
 ```
 firebase deploy
+```
+
+### Build via npm
+```
+npm run deploy
 ```
