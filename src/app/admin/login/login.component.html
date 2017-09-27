@@ -11,7 +11,6 @@
           </div>
 
           <div *ngIf="!validEmail;then CheckEmail else AuthEmail"></div>
-          i-anchi.liu@deltaww.com
         </ng-template>
       </nz-card>
     </div>
@@ -24,7 +23,7 @@
       <div nz-col nz-form-control [nzValidateStatus]="emailForm.controls.email">
         <nz-input formControlName="email" [nzPlaceHolder]="'Please login with your email'" [nzType]="'email'" [nzSize]="'large'">
         </nz-input>
-        <!-- <div nz-form-explain *ngIf="emailForm.controls.email.dirty&&emailForm.controls.email.hasError('email')">The input is not valid E-mail!</div> -->
+        <div nz-form-explain *ngIf="emailForm.controls.email.dirty&&emailForm.controls.email.hasError('email')">The input is not valid E-mail!</div>
         <div nz-form-explain *ngIf="emailForm.controls.email.dirty&&emailForm.controls.email.hasError('required')">Please input your E-mail!</div>
       </div>
     </div>

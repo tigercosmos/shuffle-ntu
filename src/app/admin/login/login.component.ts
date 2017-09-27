@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   submitEmail = ($event, value) => {
     $event.preventDefault();
     try {
-      const url = `http://mospc.cook.as.ntu.edu.tw/shufflentu/checkEmail.php?email=${value.email}`;
+      const url = `https://test-a5.azurewebsites.net/shufflentu/checkEmail.php?email=${value.email}`;
       this.http.get(url).subscribe(data => {
         if (JSON.parse(data['_body'])['auth']) {
           this.validEmail = true;
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   submitPwd = ($event, value) => {
     $event.preventDefault();
     try {
-      const url = `http://mospc.cook.as.ntu.edu.tw/shufflentu/checkPassword.php?password=${value.password}`;
+      const url = `https://test-a5.azurewebsites.net/shufflentu/checkPassword.php?password=${value.password}`;
       this.http.get(url).subscribe(data => {
         if (JSON.parse(data['_body'])['auth']) {
           this.checkLogIn.emit(true);
