@@ -3,23 +3,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
 import { NgZorroAntdModule, NZ_NOTIFICATION_CONFIG } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ConceptComponent } from './concept/concept.component';
-import { MilestoneComponent } from './milestone/milestone.component';
-import { StoryComponent } from './story/story.component';
-import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
-import { FooterComponent } from './footer/footer.component';
-import { AdmissionComponent } from './admission/admission.component';
-import { NewstoryComponent } from './newstory/newstory.component';
-import { ProcessComponent } from './process/process.component';
+import { HomeComponent, AdminComponent } from './index';
+import {
+  CarouselComponent,
+  NavbarComponent,
+  ConceptComponent,
+  MilestoneComponent,
+  StoryComponent,
+  SignupComponent,
+  FooterComponent,
+  AdmissionComponent,
+  NewstoryComponent,
+  ProcessComponent
+} from './home/index';
 
 @NgModule({
   declarations: [
@@ -33,9 +37,12 @@ import { ProcessComponent } from './process/process.component';
     FooterComponent,
     AdmissionComponent,
     NewstoryComponent,
-    ProcessComponent
+    ProcessComponent,
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -1,0 +1,11 @@
+export { FooterComponent } from './footer/footer.component';
+export { AdmissionComponent } from './admission/admission.component';
+export { NewstoryComponent } from './newstory/newstory.component';
+export { ProcessComponent } from './process/process.component';
+export { CarouselComponent } from './carousel/carousel.component';
+export { NavbarComponent } from './navbar/navbar.component';
+export { ConceptComponent } from './concept/concept.component';
+export { MilestoneComponent } from './milestone/milestone.component';
+export { StoryComponent } from './story/story.component';
+export { SignupComponent } from './signup/signup.component';
+export { HomeComponent } from './home.component';
