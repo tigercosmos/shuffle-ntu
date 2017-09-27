@@ -14,6 +14,15 @@ export class SignupComponent implements OnInit {
 
   users: FirebaseListObservable<any[]>;
   validateForm: FormGroup;
+  isVisible = false; // Modal
+
+  showModal = () => {
+    this.isVisible = true;
+  }
+
+  checkOK = (e) => {
+    this.isVisible = false;
+  }
 
   submitForm = ($event, value) => {
     $event.preventDefault();
@@ -27,8 +36,9 @@ export class SignupComponent implements OnInit {
       this.users.push(value);
       this.nns.create('success',
         '成功報名',
-        '每個禮拜六，我們將從報名者中抽出幸運兒，體驗最好玩的台大晚餐'
+        '報名完記得看一下小提醒喔！'
       );
+      this.showModal();
     } catch (e) {
       this.nns.create('error',
         '報名失敗',
