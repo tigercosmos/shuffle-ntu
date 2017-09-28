@@ -28,7 +28,9 @@ import {
 
 import {
   AdminComponent,
-  LoginComponent
+  LoginComponent,
+  ListComponent,
+  DrawingComponent
 } from './admin/index';
 
 @NgModule({
@@ -47,6 +49,8 @@ import {
     HomeComponent,
     AdminComponent,
     LoginComponent,
+    ListComponent,
+    DrawingComponent,
   ],
   imports: [
     HttpModule,

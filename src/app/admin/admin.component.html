@@ -3,16 +3,18 @@
 </div>
 <div *ngIf="isLogIn">
   <div nz-row [nzType]="'flex'" [nzJustify]="'space-around'">
-    <div nz-col [nzSpan]="4">
+    <div nz-col [nzSpan]="6">
+      <h2>所有名單</h2>
+      <app-list></app-list>
+    </div>
+    <div nz-col [nzSpan]="6">
+        <h2>抽中名單</h2>
+ 
+    </div>
+    <div nz-col [nzSpan]="6">
       col-4
     </div>
-    <div nz-col [nzSpan]="4">
-      col-4
-    </div>
-    <div nz-col [nzSpan]="4">
-      col-4
-    </div>
-    <div nz-col [nzSpan]="4">
+    <div nz-col [nzSpan]="6">
       col-4
     </div>
   </div>

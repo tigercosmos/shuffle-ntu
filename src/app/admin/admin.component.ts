@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  private isLogIn = false;
+  private isLogIn = true;
+  public usersList = [];
 
   constructor() { }
 
