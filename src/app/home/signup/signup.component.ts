@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
         '報名完記得看一下小提醒喔！'
       );
       this.showModal();
+      this.cleanForm();
     } catch (e) {
       this.nns.create('error',
         '報名失敗',
@@ -66,7 +67,10 @@ export class SignupComponent implements OnInit {
     private nns: NzNotificationService
   ) {
     this.users = db.list('/users');
+    this.cleanForm();
+  }
 
+  cleanForm() {
     this.validateForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [this.emailValidator]],
