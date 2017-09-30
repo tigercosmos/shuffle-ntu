@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
@@ -10,7 +10,7 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 export class ListComponent implements OnInit {
 
   usersDB: FirebaseObjectObservable<any>;
-  data: Array<any> = []; // table data
+  @Input() data: Array<any> = []; // table data
   user: any = {};
 
   constructor(private db: AngularFireDatabase) {
