@@ -11,6 +11,10 @@
   font-size: large;
 }
 
+img {
+  width:100%;
+}
+
 @media only screen and (max-width: 400px) {
   .circle {
     height: 80px;
