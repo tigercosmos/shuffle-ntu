@@ -1,19 +1,25 @@
 .img {
   height: calc(100vh - 64px);
   width: 100%;
-  background-image: url("/assets/img/shufflentubanner.jpg");
+  background-image: url("/assets/img/shufflentubanner-xx.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .img {
-    background-image: url("/assets/img/shufflentubanner-md.jpg");
+    background-image: url("/assets/img/shufflentubanner-l.png");
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+  .img {
+    background-image: url("/assets/img/shufflentubanner-m.png");
+  }
+}
+
+@media only screen and (max-width: 500px) {
   .img {
     background-image: url("/assets/img/shufflentubanner-sm.jpg");
   }
