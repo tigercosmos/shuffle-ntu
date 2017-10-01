@@ -1,9 +1,10 @@
 .contentBlock {
-  background-color: white;
-  height: 100%;
-}
-.center {
+  background-color: #ecdaa7;
   min-height: 100%;
+}
+
+.center {
+  min-height: calc((100vh - 64px)*0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +16,7 @@ img {
 }
 
 .content {
-  padding: 30px 0px 30px 0px;
+  padding: 30px 10px 30px 10px;
   font-size: large;
 }
 
