@@ -59,8 +59,9 @@ export class DrawingComponent {
 
   draw() {
     let luckyUser; // each round the winner's key
-    const luckyList = []; // list only have key
+    let luckyList = []; // list only have key
     this.luckyUsers = []; // init the final data
+    const userObj = this.as.getUsersObject(); // object for making data via key
 
     // put ntu students in the ntuDrawPool with probability
     const ntuDrawPool = putInPool(
@@ -71,9 +72,9 @@ export class DrawingComponent {
     // get lucky 15 ntu students' keys
     while (luckyList.length < 15) {
       luckyUser = ntuDrawPool[randN(ntuDrawPool.length)];
-      if (!(luckyUser in luckyList)) {
-        luckyList.push(luckyUser);
-      }
+      luckyList.push(luckyUser);
+      // remove deplicates
+      luckyList = luckyList.filter((v, i) => luckyList.indexOf(v) === i);
     }
 
     // put other students in the otherDrawPool with probability
@@ -84,14 +85,9 @@ export class DrawingComponent {
     );
     // get a lucky other student's key
     luckyUser = otherDrawPool[randN(otherDrawPool.length)];
-    while (1) {
-      if (!(luckyUser in luckyList)) {
-        luckyList.push(luckyUser);
-        break;
-      }
-    }
+    luckyList.push(luckyUser);
+
     // from keys to make final data
-    const userObj = this.as.getUsersObject();
     luckyList.forEach((key) => {
       this.luckyUsers.push(userObj[key]);
     });
