@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.as.getUsers();
+    this.data = this.as.getUsersArray();
   }
 
 }

@@ -6,7 +6,8 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 export class AdminService {
   usersObjDB: FirebaseObjectObservable<any>;
   usersListDB: FirebaseListObservable<any[]>;
-  users: any = [];
+  usersArray: any = [];
+  userObject: any;
 
   constructor(private db: AngularFireDatabase) {
     this.fetchUserList();
@@ -15,17 +16,22 @@ export class AdminService {
   fetchUserList() {
     this.usersObjDB = this.db.object('/users');
     this.usersObjDB.subscribe(items => {
+      this.userObject = items;
       for (const i in items) {
         if (items.hasOwnProperty(i)) {
           items[i].key = i;
-          this.users.push(items[i]);
+          this.usersArray.push(items[i]);
         }
       }
     });
   }
 
-  getUsers(): any {
-    return this.users;
+  getUsersObject(): any {
+    return  this.userObject;
+  }
+
+  getUsersArray(): any {
+    return this.usersArray;
   }
 
   removeUsers(users: Array<any>): void {

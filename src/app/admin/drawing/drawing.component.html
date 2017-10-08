@@ -1,7 +1,39 @@
 <p>
-說明：按下抽籤之後，會先處理清單，包括重複的報名，以及新數據的初始化。
-抽玩之後會在將清單狀態更新。
+  說明：按下抽籤之後，會先處理清單，包括重複的報名，以及新數據的初始化。 抽籤如果不滿意可以抽很多次，點選確認會將清單狀態和資料庫更新，按確認將不可返回，請謹慎。
 </p>
-<button nz-button [nzType]="'primary'" (click)="draw()">
-    <span>抽籤</span>
-</button>
+<br>
+<p>規則：</p>
+<p>1.每週隨機抽出15名台⼤參與者並從外校學⽣中抽出⼀名</p>
+<p>2.若上週有被抽中者，這週不列入抽選名單（除非上週有說明無法前來） </p>
+<p>3.有兩週被抽中，未說明原因⽽不參加者，則停⽌參與抽籤（私訊粉專可解除停權）</p>
+<p>4.從未被抽中過，又連續三次沒被抽中，則中獎機率x3</p>
+<p>5.有被抽中過，但連續三次沒被抽中，則中獎機率x2</p>
+<p>6. (2)~(5) 分別適用台大和非台大 </p>
+<div class="button">
+    <button nz-button [nzType]="'default'" (click)="start()">
+        <span>抽籤</span>
+    </button>
+    <button nz-button [nzType]="'danger'" (click)="start()">
+        <span>確認</span>
+    </button>
+</div>
+
+<h2>抽中名單：</h2>
+<nz-table>
+  <thead nz-thead>
+    <tr>
+      <th nz-th><span>Name</span></th>
+      <th nz-th><span>grade</span></th>
+      <th nz-th><span>email</span></th>
+      <th nz-th><span>NTU</span></th>
+    </tr>
+  </thead>
+  <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let d of luckyUsers">
+      <td nz-td><a>{{d.name}}</a></td>
+      <td nz-td>{{d.grade}}</td>
+      <td nz-td>{{d.email}}</td>
+      <td nz-td>{{d.ntu}}</td>
+    </tr>
+  </tbody>
+</nz-table>
