@@ -30,7 +30,8 @@ import {
   AdminComponent,
   LoginComponent,
   ListComponent,
-  DrawingComponent
+  DrawingComponent,
+  AdminService
 } from './admin/index';
 
 @NgModule({
@@ -74,7 +75,8 @@ import {
         nzTop: '70%',
       }
     },
-    NewstoryComponent
+    NewstoryComponent,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })
