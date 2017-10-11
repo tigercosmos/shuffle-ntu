@@ -8,16 +8,16 @@
   <ng-template #modalContent>
     <div class="background">
       <div class="title"> Shuffle NTU #2</div>
-      <div *ngFor="let i of aa">
+      <div *ngFor="let team of thisWeekUsers">
         <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'">
           <div nz-col [nzSpan]="8">
-            col-4
+            {{team['a'].grade}} {{team['a'].name}}
           </div>
           <div nz-col [nzSpan]="8">
-            col-4
+            {{team['b'].grade}} {{team['b'].name}}
           </div>
           <div nz-col [nzSpan]="8">
-            col-4
+            {{team['c'].grade}} {{team['c'].name}}
           </div>
         </div>
       </div>

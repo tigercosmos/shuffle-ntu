@@ -26,8 +26,20 @@ export class AdminService {
     });
   }
 
+  updateUserList(users: Array<any>) {
+    this.usersListDB = this.db.list('/users');
+    for (const user of users) {
+      this.usersListDB.update(user.key, user);
+    }
+  }
+
+  uploadLuckyList(users: Array<any>) {
+    this.usersListDB = this.db.list('/lucky');
+    this.usersListDB.push(users);
+  }
+
   getUsersObject(): any {
-    return  this.userObject;
+    return this.userObject;
   }
 
   getUsersArray(): any {

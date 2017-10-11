@@ -17,6 +17,16 @@ export class DrawingComponent {
   constructor(private as: AdminService) {
   }
 
+  comfirm() {
+
+    this.luckyUsers.forEach(user => {
+      user.lastBeSelected = true;
+      user.winTimes += 1;
+    });
+    this.as.uploadLuckyList(this.luckyUsers);
+    this.as.updateUserList(this.users);
+  }
+
   start() {
     this.users = this.as.getUsersArray();
     this.checkRepeat();
