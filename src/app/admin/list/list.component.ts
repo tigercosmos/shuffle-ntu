@@ -34,7 +34,7 @@ export class ListComponent implements OnInit {
     });
 
     function forceNumber(input: string) {
-      const reg = new RegExp('^[0-9]$');
+      const reg = /^\d+$/;
       if (!reg.test(input)) {
         input = '0';
       }
