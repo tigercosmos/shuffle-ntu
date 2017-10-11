@@ -9,7 +9,7 @@ import { AdminService } from '../admin.service';
 
 export class ListComponent implements OnInit {
 
-
+  isEditMode = false;
   data: Array<any> = []; // table data
 
   constructor(private as: AdminService) {
@@ -17,6 +17,44 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.as.getUsersArray();
+  }
+
+  update() {
+    this.checkData();
+    this.as.updateUserList(this.data);
+  }
+
+  checkData() {
+    this.data.forEach(user => {
+      user.lastBeSelected = forceBoolean(user.lastBeSelected);
+      user.unluckyTimes = forceNumber(user.unluckyTimes);
+      user.winTimes = forceNumber(user.winTimes);
+      user.absentTimes = forceNumber(user.absentTimes);
+      user.suspensive = forceBoolean(user.suspensive);
+    });
+
+    function forceNumber(input: string) {
+      const reg = new RegExp('^[0-9]$');
+      if (!reg.test(input)) {
+        input = '0';
+      }
+      return parseInt(input, 10);
+    }
+    function forceBoolean(input: string) {
+      if (input === 'true') {
+        return true;
+      } else if (input === 'false') {
+        return false;
+      } else {
+        return false;
+      }
+    }
+  }
+
+
+  changeEditMode() {
+    this.isEditMode = !this.isEditMode;
+    console.log(this.isEditMode);
   }
 
 }

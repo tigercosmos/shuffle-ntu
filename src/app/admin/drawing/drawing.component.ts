@@ -18,9 +18,13 @@ export class DrawingComponent {
   }
 
   comfirm() {
-
+    this.users.forEach(user => {
+      user.lastBeSelected = false;
+      user.unluckyTimes += 1;
+    });
     this.luckyUsers.forEach(user => {
       user.lastBeSelected = true;
+      user.unluckyTimes = 0;
       user.winTimes += 1;
     });
     this.as.uploadLuckyList(this.luckyUsers);
@@ -31,7 +35,6 @@ export class DrawingComponent {
     this.users = this.as.getUsersArray();
     this.checkRepeat();
     this.deleteRepeat();
-    this.initNewUsers();
     this.draw();
   }
 
@@ -48,23 +51,6 @@ export class DrawingComponent {
 
   deleteRepeat() {
     this.as.removeUsers(this.repeatUsersKey);
-  }
-
-  initNewUsers() {
-    this.users.forEach((user) => {
-      if (!('lastBeSelected' in user)) {
-        // Last time be selected or not
-        user['lastBeSelected'] = false;
-        // Times absent without notice
-        user['absentTimes'] = 0;
-        // Times not be selected
-        user['unluckyTimes'] = 0;
-        // Times be selected
-        user['winTimes'] = 0;
-        // Suspensive or not
-        user['suspensive'] = false;
-      }
-    });
   }
 
   draw() {
