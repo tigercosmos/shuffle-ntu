@@ -33,6 +33,16 @@ export class SignupComponent implements OnInit {
     }
     // put the singup info to database
     try {
+      // Last time be selected or not
+      value['lastBeSelected'] = false;
+      // Times absent without notice
+      value['absentTimes'] = 0;
+      // Times not be selected
+      value['unluckyTimes'] = 0;
+      // Times be selected
+      value['winTimes'] = 0;
+      // Suspensive or not
+      value['suspensive'] = false;
       this.users.push(value);
       this.nns.create('success',
         '成功報名',
