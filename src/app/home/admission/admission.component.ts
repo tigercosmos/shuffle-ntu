@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdmissionComponent implements OnInit {
   title = '本週名單';
   isVisible = false;
+  aa = [1, 2, 3, 4, 5];
 
   showModal = () => {
     this.isVisible = true;

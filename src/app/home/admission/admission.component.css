@@ -11,8 +11,14 @@
   font-size: large;
 }
 
-img {
-  width:100%;
+.title {
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.background {
+  padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 400px) {
