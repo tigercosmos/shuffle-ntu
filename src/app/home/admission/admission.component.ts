@@ -13,6 +13,7 @@ export class AdmissionComponent implements OnInit {
   isVisible = false;
   weekObjDB: FirebaseObjectObservable<any>;
   weekList = [];
+  thisWeekNumber = 0;
   thisWeekUsers = [];
 
   constructor(private db: AngularFireDatabase) {
@@ -38,6 +39,7 @@ export class AdmissionComponent implements OnInit {
         }
       }
       const thisWeekList = this.weekList[this.weekList.length - 1];
+      this.thisWeekNumber = this.weekList.length;
       this.thisWeekUsers = [
         { a: thisWeekList[0], b: thisWeekList[1], c: thisWeekList[2] },
         { a: thisWeekList[3], b: thisWeekList[4], c: thisWeekList[5] },
