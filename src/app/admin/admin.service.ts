@@ -7,6 +7,7 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 export class AdminService {
   usersObjDB: FirebaseObjectObservable<any>;
   usersListDB: FirebaseListObservable<any[]>;
+  backupListDB: FirebaseListObservable<any[]>;
   usersArray: any = [];
   userObject: any;
 
@@ -15,38 +16,41 @@ export class AdminService {
     private ms: NzMessageService
   ) {
     this.fetchUserList();
-    this.initNewUsers();
+  }
+
+  backup() {
+    const currentTime = `${Date.now()}`;
+    this.backupListDB = this.db.list('/backup/users');
+    const data = {};
+    data[currentTime] = this.usersArray;
+    this.backupListDB.push(data);
   }
 
   fetchUserList() {
     this.usersObjDB = this.db.object('/users');
-    try {
-      this.usersObjDB.subscribe(items => {
-        this.userObject = items;
-        for (const i in items) {
-          if (items.hasOwnProperty(i)) {
-            items[i].key = i;
-            this.usersArray.push(items[i]);
-          }
+    this.usersObjDB.subscribe(items => {
+      this.userObject = items;
+      if (this.usersArray.length > 0) {
+        this.usersArray = [];
+      }
+      for (const i in items) {
+        if (items.hasOwnProperty(i)) {
+          items[i].key = i;
+          this.usersArray.push(items[i]);
         }
-      });
-    } catch (e) {
-      this.ms.error('Cannot Fetch User Data!');
-    }
+      }
+      this.updateUserList(this.usersArray);
+    });
   }
 
   updateUserList(users: Array<any>) {
     this.usersListDB = this.db.list('/users');
-    try {
-      // double check. Prevent a new user sign up just after constructor have run
-      this.initNewUsers();
-      for (const user of users) {
-        this.usersListDB.update(user.key, user);
-      }
-      this.ms.success('Update All User Success!');
-    } catch (e) {
-      this.ms.error('Update All User Failed!');
+    // double check. Prevent a new user sign up just after constructor have run
+    this.initNewUsers(this.usersArray);
+    for (const user of users) {
+      this.usersListDB.update(user.key, user);
     }
+    this.ms.success('Update All User Success!');
   }
 
   uploadLuckyList(users: Array<any>) {
@@ -69,18 +73,14 @@ export class AdminService {
 
   removeUsers(users: Array<any>): void {
     this.usersListDB = this.db.list('/users');
-    try {
-      for (const i of users) {
-        this.usersListDB.remove(i);
-      }
-      this.ms.success('Remove Duplicate Users Success!');
-    } catch (e) {
-      this.ms.error('Remove Duplicate Users Failed!');
+    for (const i of users) {
+      this.usersListDB.remove(i);
     }
+    this.ms.success('Remove Duplicate Users Success!');
   }
 
-  initNewUsers() {
-    this.usersArray.forEach((user) => {
+  initNewUsers(usersArray) {
+    usersArray.forEach((user) => {
       if (!('lastBeSelected' in user)) {
         // Last time be selected or not
         user['lastBeSelected'] = false;

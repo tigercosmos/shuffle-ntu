@@ -8,8 +8,6 @@ import { AdminService } from '../admin.service';
 })
 
 export class DrawingComponent {
-
-
   users: Array<any> = [];
   repeatUsersKey: Array<String> = [];
   luckyUsers: Array<any> = [];
@@ -39,14 +37,18 @@ export class DrawingComponent {
   }
 
   checkRepeat() {
-    const copyUsers = [];
+    const copyUsersName = [];
+    const newUserArray = [];
+    this.repeatUsersKey = [];
     for (let i = 0; i < this.users.length; i++) {
-      if (copyUsers.includes(this.users[i].name)) {
+      if (copyUsersName.includes(this.users[i].name)) {
         this.repeatUsersKey.push(this.users[i].key);
       } else {
-        copyUsers.push(this.users[i].name);
+        copyUsersName.push(this.users[i].name);
+        newUserArray.push(this.users[i]);
       }
     }
+    this.users = newUserArray;
   }
 
   deleteRepeat() {
