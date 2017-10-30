@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
 
   isEditMode = false;
   data: Array<any> = []; // table data
+  changedData: Array<any> = [];
 
   constructor(private as: AdminService) {
   }
@@ -21,7 +22,11 @@ export class ListComponent implements OnInit {
 
   update() {
     this.checkData();
-    this.as.updateUserList(this.data);
+    this.as.updateUserList(this.changedData);
+  }
+
+  record(data) {
+    this.changedData.push(data);
   }
 
   checkData() {
@@ -51,10 +56,8 @@ export class ListComponent implements OnInit {
     }
   }
 
-
   changeEditMode() {
     this.isEditMode = !this.isEditMode;
-    console.log(this.isEditMode);
   }
 
 }
