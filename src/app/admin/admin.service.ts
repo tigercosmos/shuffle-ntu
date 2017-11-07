@@ -7,6 +7,7 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 export class AdminService {
   usersObjDB: FirebaseObjectObservable<any>;
   usersListDB: FirebaseListObservable<any[]>;
+  luckyListDB: FirebaseListObservable<any[]>;
   backupListDB: FirebaseListObservable<any[]>;
   usersArray: any = [];
   userObject: any;
@@ -39,14 +40,12 @@ export class AdminService {
           this.usersArray.push(items[i]);
         }
       }
-      this.updateUserList(this.usersArray);
     });
   }
 
   updateUserList(users: Array<any>) {
+    users = this.initNewUsers(users);
     this.usersListDB = this.db.list('/users');
-    // double check. Prevent a new user sign up just after constructor have run
-    this.initNewUsers(this.usersArray);
     for (const user of users) {
       this.usersListDB.update(user.key, user);
     }
@@ -54,13 +53,10 @@ export class AdminService {
   }
 
   uploadLuckyList(users: Array<any>) {
-    this.usersListDB = this.db.list('/lucky');
-    try {
-      this.usersListDB.push(users);
-      this.ms.success('Upload Lucky Users List Success!');
-    } catch (e) {
-      this.ms.error('Upload Lucky Users List Failed!');
-    }
+    this.luckyListDB = this.db.list('/lucky');
+    this.luckyListDB.push(users);
+    this.ms.success('Upload Lucky Users List Success!');
+    this.updateUserList(this.usersArray);
   }
 
   getUsersObject(): any {
@@ -94,5 +90,6 @@ export class AdminService {
         user['suspensive'] = false;
       }
     });
+    return usersArray;
   }
 }

@@ -26,7 +26,6 @@ export class DrawingComponent {
       user.winTimes += 1;
     });
     this.as.uploadLuckyList(this.luckyUsers);
-    this.as.updateUserList(this.users);
   }
 
   start() {
