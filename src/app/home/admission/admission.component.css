@@ -11,6 +11,19 @@
   font-size: large;
 }
 
+.gradeName {
+  height: 32px;
+}
+
+.grade {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.name {
+  text-align: left;
+}
+
 .title {
   font-size: 20px;
   text-align: center;
@@ -19,6 +32,16 @@
 
 .background {
   padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 775px) {
+  .gradeName {
+    height: 45px;
+  }
+
+  .grade {
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width: 400px) {

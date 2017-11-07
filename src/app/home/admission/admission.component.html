@@ -10,14 +10,29 @@
       <div class="title"> Shuffle NTU #{{thisWeekNumber+1}}</div>
       <div *ngFor="let team of thisWeekUsers">
         <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'">
-          <div nz-col [nzSpan]="8">
-            {{team['a'].grade}} {{team['a'].name}}
+          <div nz-col [nzSpan]="8" class="gradeName">
+            <div nz-col [nzSm]="12" [nzXs]="24" class="grade">
+              {{team['a'].grade}}
+            </div>
+            <div nz-col [nzSm]="12" [nzXs]="24" class="name">
+              {{team['a'].name}}
+            </div>
           </div>
-          <div nz-col [nzSpan]="8">
-            {{team['b'].grade}} {{team['b'].name}}
+          <div nz-col [nzSpan]="8" class="gradeName">
+            <div nz-col [nzSm]="12" [nzXs]="24" class="grade">
+              {{team['b'].grade}}
+            </div>
+            <div nz-col [nzSm]="12" [nzXs]="24" class="name">
+              {{team['b'].name}}
+            </div>
           </div>
-          <div nz-col [nzSpan]="8">
-            {{team['c'].grade}} {{team['c'].name}}
+          <div nz-col [nzSpan]="8" class="gradeName">
+            <div nz-col [nzSm]="12" [nzXs]="24" class="grade">
+              {{team['c'].grade}}
+            </div>
+            <div nz-col [nzSm]="12" [nzXs]="24" class="name">
+              {{team['c'].name}}
+            </div>
           </div>
         </div>
       </div>
